@@ -2,9 +2,9 @@ pragma solidity ^0.5.0;
 
 contract DappToken {
     // トークン名を格納
-    string  public name = "DApp Token";
+    string  public name = "Web3ish Token";
     // 暗号通貨交換用のトークンシンボルを格納
-    string  public symbol = "DAPP";
+    string  public symbol = "W3I";
     // 存在するトークンの総供給量を格納
     uint256 public totalSupply = 1000000000000000000000000; // 1 million tokensを供給
     uint8   public decimals = 18;

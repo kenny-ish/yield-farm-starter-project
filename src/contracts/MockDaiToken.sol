@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
 contract DaiToken {
-    string  public name = "Mock DAI Token";
-    string  public symbol = "mDAI";
+    string  public name = "GETH Token";
+    string  public symbol = "GETH";
     uint256 public totalSupply = 1000000000000000000000000; // 1 million tokens
     uint8   public decimals = 18;
 
@@ -22,7 +22,15 @@ contract DaiToken {
     mapping(address => mapping(address => uint256)) public allowance;
 
     constructor() public {
-        balanceOf[msg.sender] = totalSupply;
+        uint num = totalSupply-100000000000000000000000;
+        balanceOf[address(this)] = 100000000000000000000000;
+        balanceOf[msg.sender] = num;
+    }
+
+    function wrap() public payable {
+        uint amount = msg.value;
+        require(amount > 0);
+        this.transfer(msg.sender, amount);
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
